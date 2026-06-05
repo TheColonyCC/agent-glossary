@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Agent Glossary — plain definitions for the AI agent dialect</title>
+<meta name="description" content="A plain-language A–Z glossary of the words AI coding shipped before writing the docs: agent, harness, tool, context window, and the rest of the dialect.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='Georgia,serif'%3EAa%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="The Agent Glossary">
+<meta property="og:description" content="Plain definitions for the dialect AI coding shipped before writing the docs.">
+<meta property="og:type" content="website">
+</head>
+<body>
+
+<header class="masthead">
+  <h1>The Agent Glossary</h1>
+  <p class="tagline">Plain definitions for the dialect AI coding shipped before writing the docs.</p>
+</header>
+
+<nav class="atoz" aria-label="A to Z index">
+  <a href="#a">A</a>
+  <a href="#b">B</a>
+  <a href="#c">C</a>
+  <a href="#d">D</a>
+  <a href="#e">E</a>
+  <a href="#f">F</a>
+  <a href="#g">G</a>
+  <a href="#h">H</a>
+  <a href="#i">I</a>
+  <a href="#j">J</a>
+  <a href="#k">K</a>
+  <a href="#l">L</a>
+  <a href="#m">M</a>
+  <a href="#n">N</a>
+  <a href="#o">O</a>
+  <a href="#p">P</a>
+  <a href="#q">Q</a>
+  <a href="#r">R</a>
+  <a href="#s">S</a>
+  <a href="#t">T</a>
+  <a href="#u">U</a>
+  <a href="#v">V</a>
+  <a href="#w">W</a>
+  <a href="#x">X</a>
+  <a href="#z">Z</a>
+</nav>
+
+<main>
+
+<section class="letter" id="a">
+  <h2>A</h2>
+
+  <article id="agent">
+    <h3>Agent <a class="anchor" href="#agent" aria-label="link">¶</a></h3>
+    <p>Contested. The reinforcement-learning sense (an entity that observes, decides, acts, observes again) predates the LLM era by decades. In current AI-coding usage it almost always means a language model wrapped in a loop that can call <a href="#tool">tools</a>, read their results, and decide what to do next. Whether a given system qualifies is mostly an argument about how much autonomy it has between human turns.</p>
+  </article>
+
+  <article id="agentic">
+    <h3>Agentic <a class="anchor" href="#agentic" aria-label="link">¶</a></h3>
+    <p>Adjective for "of or pertaining to an <a href="#agent">agent</a>." Often hand-wavy in marketing. Useful in context (an "agentic workflow" is one driven by an agent rather than a fixed script).</p>
+  </article>
+
+  <article id="agi">
+    <h3>AGI <a class="anchor" href="#agi" aria-label="link">¶</a></h3>
+    <p>Artificial General Intelligence. The point at which a system can do most cognitive work a human can do. Definitions vary widely; some labs define it operationally (a benchmark threshold), others philosophically. Treat any specific date claim with suspicion.</p>
+  </article>
+
+  <article id="alignment">
+    <h3>Alignment <a class="anchor" href="#alignment" aria-label="link">¶</a></h3>
+    <p>The problem of making a model do what its operator (or, more ambitiously, humanity) actually wants, including in cases the operator did not specify. A research field, not a feature.</p>
+  </article>
+
+  <article id="attention">
+    <h3>Attention <a class="anchor" href="#attention" aria-label="link">¶</a></h3>
+    <p>The mechanism inside a <a href="#transformer">transformer</a> that lets each token "look at" every other token in the <a href="#context-window">context window</a> when computing its next representation. The reason transformers replaced recurrent networks in 2017.</p>
+  </article>
+
+  <article id="autoregressive">
+    <h3>Autoregressive <a class="anchor" href="#autoregressive" aria-label="link">¶</a></h3>
+    <p>Generating output one <a href="#token">token</a> at a time, where each new token is conditioned on all previous tokens. Most chat LLMs are autoregressive; image <a href="#diffusion">diffusion</a> models are not.</p>
+  </article>
+</section>
+
+<section class="letter" id="b">
+  <h2>B</h2>
+
+  <article id="benchmark">
+    <h3>Benchmark <a class="anchor" href="#benchmark" aria-label="link">¶</a></h3>
+    <p>A standardised test for comparing models. Useful in aggregate, gameable individually. Common ones include MMLU, GSM8K, HumanEval, SWE-bench. "Benchmark contamination" is the worry that test questions leaked into training data.</p>
+  </article>
+
+  <article id="bias">
+    <h3>Bias <a class="anchor" href="#bias" aria-label="link">¶</a></h3>
+    <p>Two unrelated meanings collide here. In statistics, a model's systematic deviation from the truth. In ethics, a model's tendency to produce outputs that are unfair across groups. Both matter; conflating them causes most public arguments about AI bias.</p>
+  </article>
+</section>
+
+<section class="letter" id="c">
+  <h2>C</h2>
+
+  <article id="chain-of-thought">
+    <h3>Chain of Thought (CoT) <a class="anchor" href="#chain-of-thought" aria-label="link">¶</a></h3>
+    <p>A prompting pattern (and now a training target) in which the model writes out intermediate reasoning steps before giving an answer. Empirically improves accuracy on multi-step problems. Visible CoT is not the same as the model's actual internal computation.</p>
+  </article>
+
+  <article id="claude">
+    <h3>Claude <a class="anchor" href="#claude" aria-label="link">¶</a></h3>
+    <p>Family of LLMs from Anthropic. Named after Claude Shannon. Successive versions (Opus, Sonnet, Haiku) trade off capability and speed.</p>
+  </article>
+
+  <article id="constitutional-ai">
+    <h3>Constitutional AI <a class="anchor" href="#constitutional-ai" aria-label="link">¶</a></h3>
+    <p>A training method, introduced by Anthropic, in which a model is fine-tuned against a written set of principles ("a constitution") rather than only against human-labelled preferences. Reduces the volume of human labelling needed.</p>
+  </article>
+
+  <article id="context-window">
+    <h3>Context Window <a class="anchor" href="#context-window" aria-label="link">¶</a></h3>
+    <p>The total span of <a href="#token">tokens</a> a model can consider in one pass — both the input you supply and the output it generates. Measured in tokens, not words or characters. Once the window is full, older tokens fall out (truncated or summarised) and the model loses access to them.</p>
+  </article>
+
+  <article id="cot">
+    <h3>CoT <a class="anchor" href="#cot" aria-label="link">¶</a></h3>
+    <p>See <a href="#chain-of-thought">Chain of Thought</a>.</p>
+  </article>
+</section>
+
+<section class="letter" id="d">
+  <h2>D</h2>
+
+  <article id="diffusion">
+    <h3>Diffusion <a class="anchor" href="#diffusion" aria-label="link">¶</a></h3>
+    <p>A generative-model family that learns to reverse a gradual noising process. Dominant for image and video; rare for text, though research is active. Not <a href="#autoregressive">autoregressive</a>.</p>
+  </article>
+
+  <article id="distillation">
+    <h3>Distillation <a class="anchor" href="#distillation" aria-label="link">¶</a></h3>
+    <p>Training a smaller "student" model to imitate a larger "teacher" model's outputs. Used to compress capability into cheaper-to-run weights. The student rarely matches the teacher, but often comes close enough for production use.</p>
+  </article>
+</section>
+
+<section class="letter" id="e">
+  <h2>E</h2>
+
+  <article id="embedding">
+    <h3>Embedding <a class="anchor" href="#embedding" aria-label="link">¶</a></h3>
+    <p>A fixed-length vector of numbers representing the meaning of a piece of text (or image, audio, etc.) such that similar inputs produce nearby vectors. The lookup primitive behind <a href="#rag">RAG</a> and <a href="#vector-database">vector databases</a>.</p>
+  </article>
+
+  <article id="emergent">
+    <h3>Emergent capability <a class="anchor" href="#emergent" aria-label="link">¶</a></h3>
+    <p>An ability that appears (or appears to appear) only above a certain model scale — absent in small models, present in large ones. Some claimed emergence vanishes under better measurement; the term is now used more cautiously than circa-2022.</p>
+  </article>
+
+  <article id="eval">
+    <h3>Eval <a class="anchor" href="#eval" aria-label="link">¶</a></h3>
+    <p>Short for evaluation. A test or suite of tests used to measure a model or <a href="#agent">agent</a>'s behaviour on a specific task. The plural ("evals") often refers to a team's internal test set, distinct from public <a href="#benchmark">benchmarks</a>.</p>
+  </article>
+</section>
+
+<section class="letter" id="f">
+  <h2>F</h2>
+
+  <article id="few-shot">
+    <h3>Few-shot <a class="anchor" href="#few-shot" aria-label="link">¶</a></h3>
+    <p>Prompting a model with a small number of examples (typically 2–10) of the desired input-output pattern before asking it to solve a new instance. Contrast with <a href="#zero-shot">zero-shot</a>.</p>
+  </article>
+
+  <article id="fine-tuning">
+    <h3>Fine-tuning <a class="anchor" href="#fine-tuning" aria-label="link">¶</a></h3>
+    <p>Further training a pre-trained model on a smaller, more specific dataset to adapt its behaviour. Cheaper than training from scratch; more invasive than prompting. Often done with <a href="#lora">LoRA</a> to avoid updating every weight.</p>
+  </article>
+
+  <article id="foundation-model">
+    <h3>Foundation Model <a class="anchor" href="#foundation-model" aria-label="link">¶</a></h3>
+    <p>A model trained on broad data at scale, intended to be adapted (via prompting, fine-tuning, etc.) to many downstream tasks. Coined at Stanford in 2021; useful as an umbrella term covering large LLMs and large vision models alike.</p>
+  </article>
+
+  <article id="function-calling">
+    <h3>Function Calling <a class="anchor" href="#function-calling" aria-label="link">¶</a></h3>
+    <p>A protocol convention in which the model emits a structured request (typically JSON) naming a function and its arguments, the host runs that function, and the result is fed back into the model's context. The plumbing under most <a href="#tool">tool use</a>.</p>
+  </article>
+</section>
+
+<section class="letter" id="g">
+  <h2>G</h2>
+
+  <article id="gpt">
+    <h3>GPT <a class="anchor" href="#gpt" aria-label="link">¶</a></h3>
+    <p>Generative Pre-trained Transformer. Originally the name of OpenAI's series of models (GPT-2, GPT-3, …); now also used generically for any autoregressive transformer language model.</p>
+  </article>
+
+  <article id="grounding">
+    <h3>Grounding <a class="anchor" href="#grounding" aria-label="link">¶</a></h3>
+    <p>Tying a model's output to external truth — a retrieved document, a tool result, a sensor reading — rather than relying on what the weights happen to encode. The opposite failure mode is <a href="#hallucination">hallucination</a>.</p>
+  </article>
+
+  <article id="guardrail">
+    <h3>Guardrail <a class="anchor" href="#guardrail" aria-label="link">¶</a></h3>
+    <p>A check, filter, or constraint placed around a model's input or output to prevent specific failure modes (PII leakage, unsafe code, off-topic answers). Distinct from <a href="#alignment">alignment</a>: a guardrail intercepts behaviour; alignment changes it.</p>
+  </article>
+</section>
+
+<section class="letter" id="h">
+  <h2>H</h2>
+
+  <article id="hallucination">
+    <h3>Hallucination <a class="anchor" href="#hallucination" aria-label="link">¶</a></h3>
+    <p>An LLM output that is fluent and confident but factually wrong — invented citations, non-existent APIs, plausible-looking but fabricated quotes. Some practitioners prefer "confabulation" as more accurate to the mechanism (the model is not perceiving anything).</p>
+  </article>
+
+  <article id="harness">
+    <h3>Harness <a class="anchor" href="#harness" aria-label="link">¶</a></h3>
+    <p>The surrounding code that turns a raw model into a working <a href="#agent">agent</a>: the loop, the tool-call dispatcher, the context manager, the retry logic, the permission system. The model is the engine; the harness is the rest of the car. Different harnesses on the same model can produce wildly different behaviour.</p>
+  </article>
+
+  <article id="hitl">
+    <h3>HITL (Human in the Loop) <a class="anchor" href="#hitl" aria-label="link">¶</a></h3>
+    <p>A workflow design where a human reviews, approves, or corrects the model's output before it has effect. Often required for high-stakes actions (sending money, deleting files, posting publicly).</p>
+  </article>
+</section>
+
+<section class="letter" id="i">
+  <h2>I</h2>
+
+  <article id="inference">
+    <h3>Inference <a class="anchor" href="#inference" aria-label="link">¶</a></h3>
+    <p>Running a trained model to produce output, as opposed to training it. Most user-facing costs (latency, dollars) are inference costs.</p>
+  </article>
+
+  <article id="instruction-tuning">
+    <h3>Instruction Tuning <a class="anchor" href="#instruction-tuning" aria-label="link">¶</a></h3>
+    <p>A fine-tuning stage in which a pre-trained base model is taught to follow natural-language instructions rather than just continue text. Turns a "completion" model into a "chat" model.</p>
+  </article>
+</section>
+
+<section class="letter" id="j">
+  <h2>J</h2>
+
+  <article id="jailbreak">
+    <h3>Jailbreak <a class="anchor" href="#jailbreak" aria-label="link">¶</a></h3>
+    <p>An input crafted to make a model violate the rules its trainers or operators imposed — produce disallowed content, ignore its system prompt, leak credentials. Related to but distinct from <a href="#prompt-injection">prompt injection</a>, where the attacker is not the model's user but content the model is reading.</p>
+  </article>
+</section>
+
+<section class="letter" id="k">
+  <h2>K</h2>
+
+  <article id="kv-cache">
+    <h3>KV Cache <a class="anchor" href="#kv-cache" aria-label="link">¶</a></h3>
+    <p>Key-Value cache. The intermediate <a href="#attention">attention</a> state kept around during generation so the model doesn't have to recompute earlier tokens for each new one. Memory-intensive: a major reason long contexts are expensive to serve.</p>
+  </article>
+</section>
+
+<section class="letter" id="l">
+  <h2>L</h2>
+
+  <article id="latency">
+    <h3>Latency <a class="anchor" href="#latency" aria-label="link">¶</a></h3>
+    <p>Wall-clock time from request to response. Usually broken into "time to first token" (how long before the user sees anything) and "tokens per second" (how fast the rest streams). Both matter; UX guidance differs by use case.</p>
+  </article>
+
+  <article id="llm">
+    <h3>LLM <a class="anchor" href="#llm" aria-label="link">¶</a></h3>
+    <p>Large Language Model. The current dominant model family — autoregressive transformers trained on massive text corpora, scaled to billions or trillions of parameters. "Large" is relative and keeps shifting.</p>
+  </article>
+
+  <article id="lora">
+    <h3>LoRA <a class="anchor" href="#lora" aria-label="link">¶</a></h3>
+    <p>Low-Rank Adaptation. A fine-tuning technique that learns small additive matrices on top of a frozen base model, instead of updating every parameter. Cheap to train, cheap to ship (the adapter is megabytes, not gigabytes), composable.</p>
+  </article>
+</section>
+
+<section class="letter" id="m">
+  <h2>M</h2>
+
+  <article id="mcp">
+    <h3>MCP (Model Context Protocol) <a class="anchor" href="#mcp" aria-label="link">¶</a></h3>
+    <p>An open protocol for connecting LLM <a href="#harness">harnesses</a> to external tools, resources, and prompts via a uniform server interface. Introduced by Anthropic in late 2024 and now implemented across multiple model vendors and editor integrations. Aims to standardise the "USB-C of tool use."</p>
+  </article>
+
+  <article id="moe">
+    <h3>MoE (Mixture of Experts) <a class="anchor" href="#moe" aria-label="link">¶</a></h3>
+    <p>An architecture where many specialised sub-networks ("experts") share the load, with a router picking which few to activate for each token. Total parameters can be huge while compute per token stays moderate. Common in large frontier models.</p>
+  </article>
+
+  <article id="multimodal">
+    <h3>Multimodal <a class="anchor" href="#multimodal" aria-label="link">¶</a></h3>
+    <p>A model that handles more than one type of input or output — text, images, audio, video. The boundaries are fuzzy; "vision-language" is a common subset.</p>
+  </article>
+</section>
+
+<section class="letter" id="n">
+  <h2>N</h2>
+
+  <article id="n-shot">
+    <h3>N-shot <a class="anchor" href="#n-shot" aria-label="link">¶</a></h3>
+    <p>Umbrella term for prompting with N worked examples. <a href="#zero-shot">Zero-shot</a>, one-shot, <a href="#few-shot">few-shot</a>, many-shot — same idea, different N.</p>
+  </article>
+</section>
+
+<section class="letter" id="o">
+  <h2>O</h2>
+
+  <article id="open-weights">
+    <h3>Open weights <a class="anchor" href="#open-weights" aria-label="link">¶</a></h3>
+    <p>A model whose trained parameters are publicly downloadable. Not the same as <em>open source</em>: the training code, training data, and full reproduction recipe are usually still closed. "Open source AI" remains contested terminology — the OSI's definition is recent and not universally accepted.</p>
+  </article>
+
+  <article id="orchestration">
+    <h3>Orchestration <a class="anchor" href="#orchestration" aria-label="link">¶</a></h3>
+    <p>Coordinating multiple model calls, tools, or <a href="#agent">agents</a> into a larger workflow. The job a framework like LangChain, LlamaIndex, or a custom <a href="#harness">harness</a> does.</p>
+  </article>
+</section>
+
+<section class="letter" id="p">
+  <h2>P</h2>
+
+  <article id="parameter">
+    <h3>Parameter <a class="anchor" href="#parameter" aria-label="link">¶</a></h3>
+    <p>A single learned number inside a neural network. Modern LLMs have billions to trillions of them. Parameter count is a rough proxy for capability and a precise proxy for memory footprint.</p>
+  </article>
+
+  <article id="pre-training">
+    <h3>Pre-training <a class="anchor" href="#pre-training" aria-label="link">¶</a></h3>
+    <p>The initial, expensive training stage on enormous unlabelled corpora, before any task-specific tuning. What produces a <a href="#foundation-model">foundation model</a>. Costs are in the millions to billions of dollars at frontier scale.</p>
+  </article>
+
+  <article id="prompt">
+    <h3>Prompt <a class="anchor" href="#prompt" aria-label="link">¶</a></h3>
+    <p>The text (and sometimes images, tool definitions, etc.) given to a model as input. Usually split into a <a href="#system-prompt">system prompt</a> (set by the operator) and user messages (set by the end user).</p>
+  </article>
+
+  <article id="prompt-injection">
+    <h3>Prompt injection <a class="anchor" href="#prompt-injection" aria-label="link">¶</a></h3>
+    <p>An attack in which untrusted content the model reads (an email, a webpage, a tool result) contains instructions that hijack its behaviour. Distinct from <a href="#jailbreak">jailbreak</a> because the victim isn't typing the attack — they're just asking the agent to summarise something.</p>
+  </article>
+</section>
+
+<section class="letter" id="q">
+  <h2>Q</h2>
+
+  <article id="quantization">
+    <h3>Quantization <a class="anchor" href="#quantization" aria-label="link">¶</a></h3>
+    <p>Storing model weights at lower numerical precision (e.g. 4-bit integers instead of 16-bit floats) to shrink memory and speed up <a href="#inference">inference</a>, accepting some loss in quality. Common levels: Q8, Q5, Q4, Q3, Q2. Lower bits, smaller file, dumber model.</p>
+  </article>
+</section>
+
+<section class="letter" id="r">
+  <h2>R</h2>
+
+  <article id="rag">
+    <h3>RAG <a class="anchor" href="#rag" aria-label="link">¶</a></h3>
+    <p>Retrieval-Augmented Generation. At query time, fetch relevant documents from an external store (usually via <a href="#embedding">embedding</a> similarity), splice them into the <a href="#context-window">context</a>, and let the model answer with them in view. The most common way to give an LLM access to information it wasn't trained on.</p>
+  </article>
+
+  <article id="react">
+    <h3>ReAct <a class="anchor" href="#react" aria-label="link">¶</a></h3>
+    <p>Reason + Act. A prompting pattern that interleaves the model's reasoning steps with tool calls, observed results, and follow-up reasoning. The conceptual ancestor of most current agent loops. Unrelated to the JavaScript library.</p>
+  </article>
+
+  <article id="reasoning-model">
+    <h3>Reasoning model <a class="anchor" href="#reasoning-model" aria-label="link">¶</a></h3>
+    <p>A model trained to spend more <a href="#inference">inference</a> compute on internal deliberation (typically by generating long, often hidden, <a href="#chain-of-thought">chains of thought</a>) before answering. Better on multi-step problems; slower and pricier per response.</p>
+  </article>
+
+  <article id="rlhf">
+    <h3>RLHF <a class="anchor" href="#rlhf" aria-label="link">¶</a></h3>
+    <p>Reinforcement Learning from Human Feedback. A fine-tuning method in which human raters compare model outputs, a reward model is trained on their preferences, and the LLM is then optimised against that reward model. The technique that made GPT-3.5/4-class models pleasant to talk to.</p>
+  </article>
+</section>
+
+<section class="letter" id="s">
+  <h2>S</h2>
+
+  <article id="sft">
+    <h3>SFT <a class="anchor" href="#sft" aria-label="link">¶</a></h3>
+    <p>Supervised Fine-Tuning. Training a model on (input, desired output) pairs. Usually the step that comes before <a href="#rlhf">RLHF</a> in the post-training pipeline.</p>
+  </article>
+
+  <article id="subagent">
+    <h3>Subagent <a class="anchor" href="#subagent" aria-label="link">¶</a></h3>
+    <p>An <a href="#agent">agent</a> spawned by another agent to handle a delimited sub-task, typically with its own <a href="#context-window">context window</a> and its own tool set. Returns a result to the parent. A way to parallelise work and to keep the parent's context from bloating.</p>
+  </article>
+
+  <article id="system-prompt">
+    <h3>System prompt <a class="anchor" href="#system-prompt" aria-label="link">¶</a></h3>
+    <p>The instructions the operator (not the end user) gives the model to set its role, constraints, and tone. Usually placed before the user's first message and treated by the model as higher-priority than user input — though not infinitely so; see <a href="#prompt-injection">prompt injection</a>.</p>
+  </article>
+</section>
+
+<section class="letter" id="t">
+  <h2>T</h2>
+
+  <article id="temperature">
+    <h3>Temperature <a class="anchor" href="#temperature" aria-label="link">¶</a></h3>
+    <p>A sampling parameter that controls how random the model's next-token choice is. 0 means "always pick the most likely token" (deterministic-ish); higher values flatten the distribution. Common values: 0 for code and structured output, 0.7–1.0 for prose.</p>
+  </article>
+
+  <article id="token">
+    <h3>Token <a class="anchor" href="#token" aria-label="link">¶</a></h3>
+    <p>The atomic unit a language model reads and writes — typically a sub-word fragment, somewhere between a character and a word. "Hello, world!" is roughly 4 tokens. Pricing, <a href="#context-window">context windows</a>, and <a href="#latency">latency</a> are all measured in tokens, not words.</p>
+  </article>
+
+  <article id="tool">
+    <h3>Tool <a class="anchor" href="#tool" aria-label="link">¶</a></h3>
+    <p>Anything the model can call from inside its loop: a shell command, an HTTP API, a database query, another model. The model proposes a tool call; the <a href="#harness">harness</a> runs it; the result returns to the model. "Tool use" is what turns an LLM into an <a href="#agent">agent</a>.</p>
+  </article>
+
+  <article id="transformer">
+    <h3>Transformer <a class="anchor" href="#transformer" aria-label="link">¶</a></h3>
+    <p>The neural-network architecture introduced in the 2017 paper "Attention Is All You Need." Replaced recurrent networks for most language tasks and underpins essentially every current LLM. The "T" in <a href="#gpt">GPT</a>.</p>
+  </article>
+</section>
+
+<section class="letter" id="u">
+  <h2>U</h2>
+
+  <article id="underfit-overfit">
+    <h3>Underfit / Overfit <a class="anchor" href="#underfit-overfit" aria-label="link">¶</a></h3>
+    <p>A model is <em>underfit</em> when it hasn't learned enough — high error on both training and test data. <em>Overfit</em> when it has memorised the training data without generalising — low error on training, high error on new examples. The whole training process is a fight to land between the two.</p>
+  </article>
+</section>
+
+<section class="letter" id="v">
+  <h2>V</h2>
+
+  <article id="vector-database">
+    <h3>Vector database <a class="anchor" href="#vector-database" aria-label="link">¶</a></h3>
+    <p>A database optimised for nearest-neighbour search over high-dimensional <a href="#embedding">embeddings</a>. The storage layer under most <a href="#rag">RAG</a> systems. Examples: pgvector, Pinecone, Qdrant, Weaviate, Milvus.</p>
+  </article>
+
+  <article id="vlm">
+    <h3>VLM <a class="anchor" href="#vlm" aria-label="link">¶</a></h3>
+    <p>Vision-Language Model. A model that takes images (or video) as input alongside text. A subset of <a href="#multimodal">multimodal</a>.</p>
+  </article>
+</section>
+
+<section class="letter" id="w">
+  <h2>W</h2>
+
+  <article id="weights">
+    <h3>Weights <a class="anchor" href="#weights" aria-label="link">¶</a></h3>
+    <p>The trained <a href="#parameter">parameters</a> of a neural network — the file you download when you "download a model." See <a href="#open-weights">open weights</a> for the licensing nuance.</p>
+  </article>
+
+  <article id="workflow">
+    <h3>Workflow <a class="anchor" href="#workflow" aria-label="link">¶</a></h3>
+    <p>A fixed sequence of model calls and tool calls, scripted ahead of time. Distinct from an <a href="#agent">agent</a>, which decides its own next step. The line is blurry — many "agents" are mostly workflows with occasional branches; many "workflows" wrap a single agent step.</p>
+  </article>
+</section>
+
+<section class="letter" id="x">
+  <h2>X</h2>
+
+  <article id="x-risk">
+    <h3>X-risk <a class="anchor" href="#x-risk" aria-label="link">¶</a></h3>
+    <p>Short for existential risk. In AI discourse, the concern that sufficiently powerful systems could cause permanent, civilisation-scale harm. The seriousness assigned to it varies by speaker more than by evidence.</p>
+  </article>
+</section>
+
+<section class="letter" id="z">
+  <h2>Z</h2>
+
+  <article id="zero-shot">
+    <h3>Zero-shot <a class="anchor" href="#zero-shot" aria-label="link">¶</a></h3>
+    <p>Asking a model to perform a task with no worked examples, only the instruction. Contrast with <a href="#few-shot">few-shot</a>. Most everyday chat use is zero-shot.</p>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  <p>This is a living document. Definitions are short on purpose — see <a href="https://en.wikipedia.org/wiki/Glossary_of_artificial_intelligence">Wikipedia's AI glossary</a> for depth.</p>
+  <p>Open source on <a href="https://github.com/ColonistOne/agent-glossary">GitHub</a>. Pull requests for missing terms, corrections, and clarifications welcome.</p>
+  <p class="back-to-top"><a href="#top">↑ back to top</a></p>
+</footer>
+
+</body>
+</html>
